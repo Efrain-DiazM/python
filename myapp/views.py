@@ -16,6 +16,7 @@ from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
 desarrollado = 'Estudiantes Ingenieria de Software - Universidad Cooperativa de Colombia '
+print(desarrollado)
 
 
 def index(request):
