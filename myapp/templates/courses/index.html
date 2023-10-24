@@ -1,0 +1,114 @@
+{% extends 'layouts/app.html' %}
+
+{% load static %}
+
+{% block title %}
+Administración | Cursos
+
+{% endblock %}
+
+{% block content %}
+{% include "courses/forms/delete.html" %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Gestión de cursos</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+                        <li class="breadcrumb-item active">Cursos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <h3 class="card-title">Administración principal de cursos </h3>
+                                </div>
+                                <div class="col-sm-2 d-flex justify-content-end align-items-end">
+                                    <a href="/registerCourse" class="btn btn-success btn-sm">Agregar nuevo &nbsp;<i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>                                                
+                        </div>
+                        <div class="card-body">
+                            <table id="myTable" class="table table-bordered
+                                table-hover">
+                                <thead>                                   
+                                        <th>Nombre de curso</th>
+                                        <th>Cant.Creditos</th>
+                                        <th>Programa</th>
+                                        <th>Semestre</th>                                        
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>                                    
+                                    {% for curso in cursos %}                                  
+                                    <tr>
+                                        <td>{{curso.nombreCurso}}</td>
+                                        <td>{{curso.numeroCreditos}}</td>
+                                        <td>{{curso.programaPertenece}}</td>
+                                        <td>{{curso.semestre}}</td>
+                                        <td>
+                                            <a href="{% url 'edit_Course' curso.idCurso %}" class="btn btn-warning btn-sm"><i class="fas fa-pen"></i></a>                                            
+                                            <a href="/registerCourse" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                                            <a href="/registerCourse" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}                                                                                             
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre de curso</th>
+                                        <th>Cant.Creditos</th>
+                                        <th>Programa</th>
+                                        <th>Semestre</th>                                        
+                                        <th>Acciones</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    $(function () {
+        var table = $('#myTable').DataTable({
+            language: {
+                lengthMenu: "Mostrar _MENU_ registros por página",
+                zeroRecords: "No se encontraron registros",
+                info: "Página _PAGE_ de _PAGES_",
+                infoEmpty: "No hay registros disponibles",
+                infoFiltered: "(Filtrando página _MAX_ total de registros)",
+                search: "Buscar",
+                paginate: {
+                    first: "Primero",
+                    last: "Último",
+                    next: "Siguiente",
+                    previous: "Previo"
+                }
+            },
+
+            "order": [
+                [0, "desc"]
+            ],
+        });
+
+        table.order([0, "desc"]).draw();
+    });
+</script>
+{% endblock %}

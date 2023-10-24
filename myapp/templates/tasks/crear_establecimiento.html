@@ -1,0 +1,50 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+
+<form action="" method="POST" class="container card card-body mt-5">
+    {% csrf_token %}
+    <h1 class="display-5 text-center">Registrar establecimiento</h1><br>
+    <div class="row mb-3">
+      <label for="nit" class="col-sm-2 col-form-label">NIT del establecimiento</label>
+      <div class="col-sm-5">
+        <input type="text" name="nit" class="form-control" id="nit" placeholder="Escriba el NIT del establecimiento">
+      </div>
+    </div>
+    <div class="row mb-3">
+        <label for="municipio" class="col-sm-2 col-form-label">Municipio</label>
+        <div class="col-sm-5">
+          <input type="text" name="municipio" class="form-control" id="municipio" placeholder="Escriba municipio donde esta ubicado el establecimiento">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="tipoEstablecimiento" class="col-sm-2 col-form-label">Tipo de establecimiento</label>
+        <div class="col-sm-5">
+          <input type="text" name="tipoEstablecimiento" class="form-control" id="tipoEstablecimiento" placeholder="Escriba el tipo de establecimiento">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="nombreEstablecimiento" class="col-sm-2 col-form-label">Nombre o razon social del establecimiento</label>
+        <div class="col-sm-5">
+          <input type="text" name="nombreEstablecimiento" class="form-control" id="nombreEstablecimiento" placeholder="Escriba el nombre del estableciemiento">
+        </div>
+    </div>
+    </div><div class="row mb-3">
+        <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
+        <div class="col-sm-5">
+          <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Escriba el telefono de contacto del estableciemiento">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="propietario" class="col-sm-2 col-form-label">Nombre representante legal</label>
+        <div class="col-sm-5">
+          <input type="text" name="propietario" class="form-control" id="propietario" placeholder="Escriba el nombre del representante legal">
+        </div>
+    </div>
+    <button class="d-grid gap-2 col-4 mx-auto btn btn-primary">
+        Registrar establecimiento
+    </button>
+</form>
+
+{% endblock %}

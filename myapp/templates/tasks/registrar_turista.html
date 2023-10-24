@@ -1,0 +1,75 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+
+
+<form action="" method="POST" class="container">
+    {% csrf_token %}
+    <h1 class="display-5 text-center">Registrar nuevo turista</h1><br>
+    <div class="row mb-3">
+      <label for="operador" class="col-sm-2 col-form-label">Operador turistico</label>
+      <div class="col-sm-5">
+        <input type="text" name="operador" class="form-control" id="operador" placeholder="Escriba el nombre del operador turistico">
+      </div>
+    </div>
+    <div class="row mb-3">
+        <label for="tipDocumento" class="col-sm-2 col-form-label">Tipo de documento</label>
+        <div class="col-sm-5">
+          <input type="text" name="tipDocumento" class="form-control" id="tipDocumento" placeholder="Escriba tipo de documento">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="numeroDocumento" class="col-sm-2 col-form-label">Numero de documento</label>
+        <div class="col-sm-5">
+          <input type="text" name="numeroDocumento" class="form-control" id="numeroDocumento" placeholder="Escriba el numero de documento del turista">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="nombreTurista" class="col-sm-2 col-form-label">Nombre turista</label>
+        <div class="col-sm-5">
+          <input type="text" name="nombreTurista" class="form-control" id="nombreTurista" placeholder="Escriba el nombre del turista ">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="procedencia" class="col-sm-2 col-form-label">Proveniencia</label>
+        <div class="col-sm-5">
+          <input type="text" name="procedencia" class="form-control" id="procedencia" placeholder="Escriba el lugar de proveniencia">
+        </div>
+    </div><div class="row mb-3">
+        <label for="acompañado" class="col-sm-2 col-form-label">¿Llegó en grupo o individual?</label>
+        <div class="col-sm-5">
+          <input type="text" name="acompañado" class="form-control" id="acompañado" placeholder="Escriba si llego en grupo o individual">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="fechaLlegada" class="col-sm-2 col-form-label">Tiempo de estadía en Pasto (fechas llegada y salida)</label>
+        <div class="col-sm-5">
+          <input type="text" name="fechaLlegada" class="form-control" id="fechaLlegada" placeholder="Escriba el el tiempo de estadia en Pasto">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="transporte" class="col-sm-2 col-form-label">En qué se transporta (medio de transporte)</label>
+        <div class="col-sm-5">
+          <input type="text" name="transporte" class="form-control" id="transporte" placeholder="Escriba el trasporte en que llego el turista">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="dinero" class="col-sm-2 col-form-label">Aproximadamente cuánto gastó en Pasto</label>
+        <div class="col-sm-5">
+          <input type="text" name="dinero" class="form-control" id="dinero" placeholder="Escriba el monto aproximado que gasto el turista">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="equipaje" class="col-sm-2 col-form-label">¿Qué equipamiento porta?</label>
+        <div class="col-sm-5">
+          <input type="text" name="equipaje" class="form-control" id="equipaje" placeholder="Escriba el equipaje que lleva el turista">
+        </div>
+    </div>
+    <button class="btn btn-primary">
+        Registrar turista
+    </button>
+</form>
+
+
+{% endblock %}

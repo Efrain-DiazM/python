@@ -1,0 +1,55 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="offset-med-3">
+            <h1>Turistas</h1>
+
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">#</th> -->
+                    <th scope="col">Operador</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Turista</th>
+                    <th scope="col">Proveniencia</th>
+                    <th scope="col">Fecha de llegada</th>
+                    <th scope="col">Fecha de salida</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for turista in turistas %}
+                  <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{turista.operador}}</td>
+                    <td>{{turista.numeroDocumento}}</td>
+                    <td>{{turista.nombreTurista}}</td>
+                    <td>{{turista.procedencia}}</td>
+                    <td>{{turista.fechaLlegada}}</td>
+                    <td>{{turista.nombreTurista}}</td>
+
+                  <!-- </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td> -->   
+                  </tr>
+                  {% endfor %} 
+                </tbody>
+              </table>
+            </ul>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'layouts/app.html' %}
+
+{% load static %}
+
+{% block title %}
+Administración | Crear curso
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+                        <li class="breadcrumb-item active">Crear curso</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Agregar nuevo curso</h3>
+                        </div>
+                        <form action="" method="GET">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="alumno">Alumno:</label>
+                                            <select class="select2" id="alumno" name="alumno" data-placeholder="Seleccione tipo de programa" style="width: 100%;">
+                                                {% for alumno in alumnos %} 
+                                                <option>{{alumno.nombres}} {{alumno.apellidos}}</option>
+                                                {% endfor %}
+                                                <!-- <option>Ingenieria de software</option>
+                                                <option>Ingenieria industrial</option>
+                                                <option>Derecho</option>
+                                                <option>Odontologia</option>
+                                                <option>Enfermeria</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="curso">Curso:</label>
+                                            <select class="select2" id="curso" name="curso" data-placeholder="Seleccione tipo de programa" style="width: 100%;">
+                                                {% for curso in cursos %} 
+                                                <option>{{curso.nombreCurso}}</option>
+                                                <!-- <option>Postgrado</option>
+                                                <option>Especialización</option>
+                                                <option>Doctorado</option>
+                                                <option>Tecnico por competencias</option>
+                                                <option>Licenciatura</option> -->
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div> 
+                                    <div id="contenidoAlumno"></div>
+                                </div>                                
+                            </div>
+                            <div class="card-footer">
+                                <button href="{% url 'matriculaAlumnoGuardar' '111111' '44444'%}" class="btn btn-primary">Realizar matricula</button>
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                                    
+                                  </button>
+                            </div>
+
+                            <div class="modal fade" id="modal-default">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Matricular Alumno</h4>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>El Alumno ya tiene matriculado el maximo de cursos (6)&hellip;</p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+{% block js%}
+<!-- <script>
+    $(document).ready(function() {
+        console.log('Hola mundo');
+        $('.select2').select2();
+    });
+</script> -->
+<script type="text/javascript">
+    var selectAlumno = document.getElementById('alumno');
+    var contenidoAlumno = document.getElementById('contenidoAlumno');
+    selectAlumno.addEventListener('change',
+    function(){
+    var selectedAlumno = this.options[selectAlumno.selectedIndex];
+    contenidoAlumno.innerHTML = selectedAlumno.value
+    // selectedOption.innerHTML = selectedOption.value;
+    console.log(selectedAlumno.value);
+  });
+</script>
+{% endblock %}

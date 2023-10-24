@@ -1,0 +1,211 @@
+{% extends 'layouts/app.html' %}
+
+{% load static %}
+
+{% block title %}
+Administración | Crear curso
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+                        <li class="breadcrumb-item active">Actualizar curso</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Actualizar curso</h3>
+                        </div>
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="idCourse">ID curso:</label>
+                                            <input type="text" class="form-control" id="idCourse" name="idCourse" value="{{course.idCurso}}"  placeholder="Nombre del curso">
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nombreCurso">Nombre del curso:</label>
+                                            <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" value="{{course.nombreCurso}}" placeholder="Nombre del curso">
+                                        </div>
+                                    </div>  
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="numeroCreditos">Número de Creditos:</label>
+                                            <input type="number" class="form-control" id="numeroCreditos" name="numeroCreditos" value="{{course.numeroCreditos}}" placeholder="Cantidad de creditos">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="programaPertenece">Tipo de programa:</label>
+                                            <select class="select2" id="programaPertenece" name="programaPertenece" value="{{course.programaPertenece}}" data-placeholder="Seleccione tipo de programa" style="width: 100%;">
+                                                <option>Ingenieria de software</option>
+                                                <option>Ingenieria industrial</option>
+                                                <option>Derecho</option>
+                                                <option>Odontologia</option>
+                                                <option>Enfermeria</option>                                        
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="tipoPrograma">Oferta academica:</label>
+                                            <select class="select2" id="tipoPrograma" name="tipoPrograma" value="{{course.tipoPrograma}}" data-placeholder="Seleccione tipo de programa" style="width: 100%;">
+                                                <option>Pregrado</option>
+                                                <option>Postgrado</option>
+                                                <option>Especialización</option>
+                                                <option>Doctorado</option>
+                                                <option>Tecnico por competencias</option>
+                                                <option>Licenciatura</option>                                        
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="semestre">Semestre:</label>
+                                            <input type="text" class="form-control" id="semestre" name="semestre" value="{{course.semestre}}" placeholder="Ingrese el horario de clases">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="descripcion">Descripción del curso:</label>
+                                            <textarea class="form-control" rows="3" id="descripcion" name="descripcion" value="{{course.descripcion}}" placeholder="Ingrese la descripción aquí..."></textarea>
+                                        </div>
+                                    </div>                                                                                                                                           -->
+                                </div>                                
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Crear curso</button>
+                            </div>
+                        </form>
+                        <!-- <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nameCourse">Nombre del curso:</label>
+                                            <input type="text" class="form-control" id="nameCourse" name="nameCourse" placeholder="Nombre del curso">
+                                        </div>
+                                    </div>  
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="numberCrdits">Número de Creditos:</label>
+                                            <input type="number" class="form-control" id="numberCrdits" name="numberCrdits" placeholder="Cantidad de creditos">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Descripción del curso:</label>
+                                            <textarea class="form-control" rows="3" placeholder="Ingrese la descripción aquí..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Requisitos previos:</label>
+                                            <textarea class="form-control" rows="3" placeholder="Ingrese los requisitos aquí..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Horario de clases:</label>
+                                            <input type="text" class="form-control" name="classSchedule" placeholder="Ingrese el horario de clases">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Docente</label>
+                                            <select class="select2" data-placeholder="Seleccione un docente" style="width: 100%;">
+                                                <option>David Mena</option>
+                                                <option>Alfonso Quiñonez</option>
+                                                <option>Pepe Suarez</option>
+                                                <option>Daniel Insuasty</option>
+                                                <option>Pedro Campo</option>
+                                                <option>Servio Pantoja</option>
+                                                <option>Jhonathan Mideros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Ubicación:</label>
+                                            <input type="text" class="form-control" name="locationCourse" placeholder="Ubicación donde se llevara a cabo el curso">
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tipo de evaluación:</label>
+                                            <select class="form-control" data-placeholder="Seleccione un tipo de evaluación" style="width: 100%;">
+                                                <option>Evaluación por competencias</option>
+                                                <option>Evaluación por proyecto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Recursos requeridos</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Seleccione un archivo</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">Cargar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tipo de programa:</label>
+                                            <select class="select2" data-placeholder="Seleccione tipo de programa" style="width: 100%;">
+                                                <option>Pregrado</option>
+                                                <option>Especialización</option>
+                                                <option>Doctorado</option>
+                                                <option>Tecnico por competencias</option>
+                                                <option>Licenciatura</option>                                        
+                                            </select>
+                                        </div>
+                                    </div>                                                                                                            
+                                </div>                                
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+{% block js%}
+<script>
+    $(document).ready(function() {
+        console.log('Hola mundo');
+        $('.select2').select2();
+    });
+</script>
+{% endblock %}

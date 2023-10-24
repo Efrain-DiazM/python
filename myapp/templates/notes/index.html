@@ -1,0 +1,292 @@
+{% extends 'layouts/app.html' %} 
+{% load static %} 
+{% block title %} Administración | Gest Notas {% endblock %} 
+
+{% block content %} 
+{% include "courses/forms/delete.html" %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Gestión de notas</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Escritorio</a></li>
+                        <li class="breadcrumb-item active">Notas</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Lista de Estudiantes</h3>
+                            <button type="submit" class="btn btn-primary float-right">
+                                Guardar
+                            </button>
+                            <button type="submit" class="btn btn-success float-right">
+                                Editar
+                            </button>
+                        </div>                        
+                        <div class="card-body">
+                            <table id="myTable" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nombres y Apellidos</th>
+                                        <th>ID</th>
+                                        <th class="col-md-1">Momento 1</th>
+                                        <th class="col-md-1">Momento 2</th>
+                                        <th class="col-md-1">Momento 3</th>
+                                        <th class="col-md-1">Final</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Clark Kent</td>
+                                        <td>654132</td>
+                                        <td>
+                                            <input type="number" id="note" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maduro Mas</td>
+                                        <td>943761</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mario Reyes</td>
+                                        <td>203521</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rocky Balboa</td>
+                                        <td>654357</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Arnold Schwarzenegger</td>
+                                        <td>741852</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Beatriz Pinzon Solano</td>
+                                        <td>465852</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Petroski M19</td>
+                                        <td>132195</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luis Alfonso Cano</td>
+                                        <td>I798132</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manuel Gurmenzindo</td>
+                                        <td>657845</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Benito Camelas Pakistan</td>
+                                        <td>786512</td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                        <td>
+                                            <input type="number" step="0.01" class="form-control" placeholder="" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombres y Apellidos</th>
+                                        <th>ID</th>
+                                        <th>Momento 1</th>
+                                        <th>Momento 2</th>
+                                        <th>Momento 3</th>
+                                        <th>Final</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Lista de Estudiantes</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+</div>  
+{% endblock %} {% block js %}
+<script>
+    $(function () {
+        var table = $("#myTable").DataTable({
+            language: {
+                lengthMenu: "Mostrar _MENU_ registros por página",
+                zeroRecords: "No se encontraron registros",
+                info: "Página _PAGE_ de _PAGES_",
+                infoEmpty: "No hay registros disponibles",
+                infoFiltered: "(Filtrando página _MAX_ total de registros)",
+                search: "Buscar",
+                paginate: {
+                    first: "Primero",
+                    last: "Último",
+                    next: "Siguiente",
+                    previous: "Previo",
+                },
+            },
+
+            order: [
+                [0, "desc"]
+            ],
+        });
+
+        table.order([0, "desc"]).draw();
+    });
+</script>
+<script>
+    function limitRange(inputId, min, max) {
+        var input = document.getElementById(inputId);
+
+        input.addEventListener("input", function() {
+        var value = parseFloat(input.value);
+
+        if (isNaN(value)) {
+            input.value = "";
+        } else {
+        if (value < min) {
+            input.value = min;
+        } else if (value > max) {
+            input.value = max;
+        }
+        }
+    });
+    }
+
+    limitRange("note", 0.0, 5.0);
+  </script>
+{% endblock %}
