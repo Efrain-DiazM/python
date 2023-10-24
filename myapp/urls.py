@@ -15,4 +15,5 @@ urlpatterns = [
     path('notas/', views.gestNotas, name="notas"),
     # path('crearCursos/', views.crearCursos, name="crearCursos"),
     path('profile/', views.profile, name="profile"),
+    
 ]
