@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'CL0UD'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DF4EB2E5BA864E52A014C01702862D0A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_545A3B391B6342E5919EF25AA676E555 }}
